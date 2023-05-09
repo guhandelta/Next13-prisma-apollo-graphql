@@ -36,6 +36,9 @@ const typeDefs = `#graphql
         addNovel(image: String, title: String): Novel
         updateNovel(id: ID!, title: String, image: String): Novel
         deleteNovel(id: ID!): Novel
+        addAuthor(novelId: ID!, name: String): Author
+        updateAuthor(id: ID!, name: String, image: String): Author
+        deleteAuthor(id: ID!): Author
     }
 `;
 
@@ -92,6 +95,31 @@ const resolvers = {
                         }
                     });
                 },
+        addAuthor: async (parent: any, args: any, context: Context) =>{
+            return await context.prisma.author.create({
+                data: {
+                    novelId: args.novelId,
+                    name: args.name,
+                }
+            });
+        },
+        updateAuthor: async (parent: any, args: any, context: Context) =>{
+                return await context.prisma.author.update({
+                where:{
+                    id: args.id,
+                },
+                data: {
+                    name: args.name,
+                }
+            });
+        },
+        deleteAuthor: async (parent: any, args: any, context: Context) =>{
+            return await context.prisma.author.delete({
+                where: {
+                    id: args.id,
+                }
+            });
+        },
     }
 };
 
