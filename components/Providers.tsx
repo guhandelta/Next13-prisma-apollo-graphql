@@ -13,7 +13,7 @@ type Props = {}
 const Providers = ({ children }: { children: ReactNode }) => {
 
     const client = new ApolloClient({
-        uri: "https://flyby-gateway.heroku.com",
+        uri: "http://localhost:3001/api/graphql",
         cache: new InMemoryCache()
     });
 
