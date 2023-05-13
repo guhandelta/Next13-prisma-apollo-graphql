@@ -1,6 +1,6 @@
 "use client"
+import Link from "next/link";
 
-// import { BASE_URL } from "@/config";
 import { DELETE_NOVEL } from "@/graphql/mutations";
 import { GET_NOVELS } from "@/graphql/queries";
 import { INovels } from "@/typings";
@@ -42,12 +42,12 @@ export const Novel = ({ novel }: Props) => {
 					Authors :{novel?.authors.length}
 				</p>
 			</div>
-			{/* <Link
-				href={`${BASE_URL}/novel/${novel.id}`}
+			<Link
+				href={`/novel/${novel.id}`}
 				className="bg-orange-500 mt-5 p-2 rounded-lg"
 			>
 				Read More
-			</Link> */}
+			</Link>
 
 			<button
 				onClick={() => deleteNovel({ variables: { id: novel.id } })}
