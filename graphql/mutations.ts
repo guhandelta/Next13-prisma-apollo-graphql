@@ -16,3 +16,20 @@ export const ADD_NOVEL= gql`
         }
     }
 `
+export const DELETE_NOVEL= gql`
+    mutation Mutation($id: ID!) {
+        deleteNovel(id: $id) {
+            authors {
+                id
+                name
+                novelID
+            }
+            createdAt
+            id
+            image
+            title
+            updatedAt
+        }
+    }
+  
+`

@@ -35,7 +35,7 @@ const Novels = (props: Props) => {
     
 
   return (
-    <div className="flext flex-col items-center justify-center mt-[25%] ml-[35%]">
+    <div className="flext flex-col items-center justify-center mt-[3%] ml-[3%]">
         <form onSubmit={handleSubmit} className="flex my-5 space-x-3">
           <input
             value={title}
@@ -55,11 +55,11 @@ const Novels = (props: Props) => {
             Add Novel
           </button>
         </form>
-        {/*<div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-2">
           {novels.map((novel) => (
             <Novel key={novel.id} novel={novel} />
           ))}
-        </div> */}
+        </div>
     </div>
   )
 }
