@@ -13,7 +13,7 @@ type Props = {}
 const Providers = ({ children }: { children: ReactNode }) => {
 
     const client = new ApolloClient({
-        uri: "http://localhost:3001/api/graphql",
+        uri: `http://localhost:4000/api/graphql`,
         cache: new InMemoryCache()
     });
 

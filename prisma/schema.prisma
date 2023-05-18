@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// While using Prisma, these schemas can be used as typedefs
 model Novel{
   id String @id @default(uuid())
   title String
